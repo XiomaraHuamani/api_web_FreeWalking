@@ -1,0 +1,57 @@
+pip list 
+pip install virtualenv
+virtualenv veterinaria
+cd veterinaria
+Scripts\activate
+pip install Django
+django-admin startproject backend
+django-admin startproject frontend
+cd backend
+python manage.py runserver
+python manage.py runserver 0.0.0.0:9000
+
+------------------------------------------
+
+python manage.py startapp ventas
+python manage.py startapp conta
+python manage.py startapp remu
+
+
+
+-----------------------------------------------
+
+------en model de "ventas este codigo----
+
+from django.db import models
+
+
+class Question(models.Model):
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField("date published")
+
+
+class Choice(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
+
+----------------------------------------------------
+
+------en cmd para crear tablas en admind----
+python manage.py makemigrations
+python manage.py migrate 
+
+-------creacion de cuenta admin------
+python manage.py createsuperuser --username=juan --email=juan@example.com
+
+-----------------------------------------------------------
+----visual-- en archivo admin de "ventas" ------------------------
+
+from django.contrib import admin
+
+from ventas.models import Question, Choice
+
+admin.site.register(Question)
+admin.site.register(Choice)
+
+

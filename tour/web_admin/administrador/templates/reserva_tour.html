@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+  <title>Ventana emergente en HTML</title>
+  <script>
+    function mostrarMensaje() {
+      alert("★★★ Felicitaciones, has agendado el tour exitosamente! ★★★");
+    }
+  </script>
+</head>
+
+
+  <header>{%include 'cabe.html'%}</header>
+
+  <body>
+    <div class="hero hero-inner">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mx-auto text-center">
+            <div class="intro-wrap">
+              
+              <h1 class="mb-0">Reserva un Tour.</h1>
+              <p class="text-white">
+                Favor ingresa tus datos y agenda con nosotros
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="untree_co-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <form class="contact-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="text-white" for="nom_pasaj">Nombre</label>
+                    <input type="text" class="form-control" id="nom_pasaj" placeholder="Tu Nombre"  />
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="text-white" for="ap_pasaj"
+                      >Apellido Paterno</label
+                    >
+                    <input type="text" class="form-control" id="ap_pasaj" placeholder="Tu Apellido" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="text-white" for="dni">Rut | Pasaporte</label>
+                <input type="text" class="form-control" id="dni" placeholder="11111111-1">/>
+              </div>
+
+              <div class="form-group">
+                <label class="text-white" for="cantidad">Cantidad de acompañantes: ($2.000 c/u)</label>
+                <select class="form-control" id="cantidad">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <!-- Agrega más opciones según sea necesario -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="text-white" for="cant_nino">Niños menores de 12 años ($1.000 c/u)</label>
+                <div class="input-group">
+
+                  <select class="form-control" id="cant_nino" style="width: calc(100% - 90px);">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <!-- Agrega más opciones de códigos de país según tus necesidades -->
+                  </select>
+                  
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="text-white" for="fono">Celular | Whatsapp</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="fono" style="width: calc(100% - 90px);" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="text-white" for="email_pasaj">Correo electronico</label>
+                <input type="email" class="form-control" id="email_pasaj" placeholder="aaaaa@aaaa.com"/>
+              </div>
+
+              <div class="row align-items-center">
+                <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                  <a href="pago_tour" class="btn btn-primary btn-block text-black" onclick="mostrarMensaje()">
+                    Reserva ahora</a>
+                </div>
+
+                <div class="row align-items-center">
+                  
+                </div>
+              </div>
+            </form>
+          </div>
+          
+          <div class="col-lg-5 ml-auto">
+            <div class="quick-contact-item d-flex align-items-center mb-4">
+              <form class="form">
+                <div class="row mb-2">
+                  <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                    <select
+                      name=""
+                      id="id_tour"
+                      class="form-control custom-select"
+                    >
+                      <option value="">Tour</option>
+                      <option value="1">Cerro San Cristóbal</option>
+                      <option value="2">Cerro Santa Lucía</option>
+                      <option value="3">Casco Histórico</option>
+                      <option value="4">La Moneda</option>
+                      <option value="5">Barrio Bellavista</option>
+                      <option value="6">Barrio Lastarria</option>
+                      <option value="7">Barrio Italia</option>
+                      <option value="8">Valparaíso</option>
+                      <option value="9">Viña del Mar</option>
+                      <option value="10">La Serena</option>
+                      <option value="11">Cordillera de Los Andes</option>
+                      <option value="12">Farellones</option>
+                      <option value="13">Cajón del Maipo</option>
+                      <option value="14">Siete Tazas</option>
+                      <option value="15">Iquique</option>
+                      <option value="16">Chiloé</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
+                    <input type="date" class="form-control" id="fech_fac" name="trip-start"
+                    value="2023-06-24"
+                     min="2023-06-24" max="2024-12-31">
+                  </div>
+          
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                    <input
+                      type="submit"
+                      class="btn btn-primary btn-block"
+                      value="Buscar"
+                    />
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {%include 'testimonios.html'%}
+
+    <footer>{%include 'footer.html'%}</footer>
+
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Cargando...</span>
+      </div>
+    </div>
+
+    <script src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js'%}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js'%}"></script>
+    <script src="{% static 'js/aos.js'%}"></script>
+    <script src="{% static 'js/moment.min.js'%}"></script>
+    <script src="{% static 'js/daterangepicker.js'%}"></script>
+
+    <script src="{% static 'js/typed.js'%}"></script>
+
+    <script src="{% static 'js/custom.js'%}"></script>
+  </body>
+</html>

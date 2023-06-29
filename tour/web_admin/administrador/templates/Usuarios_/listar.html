@@ -1,0 +1,25 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Listar Usuarios</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id_usuario</th>
+        <th scope="col">username</th>
+        <th scope="col">mail</th>
+        <th scope="col">clave</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for u in usuarios%}
+      <tr>
+        <th scope="row">{{ u.id_usuario }}</th>
+        <td>{{ u.username }}</td>
+        <td>{{ u.mail }}</td>
+        <td>{{ u.clave }}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

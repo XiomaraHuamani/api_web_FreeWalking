@@ -1,0 +1,30 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Listar Contacto</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id_usuario</th>
+        <th scope="col">nom_contacto</th>
+        <th scope="col">ape_contacto</th>
+        <th scope="col">email_contacto</th>
+        <th scope="col">fono_contacto</th>
+        <th scope="col">mensaje</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {%for u in contacto%}
+      <tr>
+        <th scope="row">{{ u.id_contacto }}</th>
+        <td>{{ u.nom_contacto }}</td>
+        <td>{{ u.ape_contacto }}</td>
+        <td>{{ u.email_contacto }}</td>
+        <td>{{ u.fono_contacto }}</td>
+        <td>{{ u.mensaje }}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

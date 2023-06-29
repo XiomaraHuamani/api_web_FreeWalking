@@ -1,0 +1,136 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Actualizar Guia</h2>
+
+<div>
+  <form action="actualizarGuia" method="POST">
+    {% csrf_token %}
+
+
+    <div class="form-group row">
+      <label for="nombre" class="col-4 col-form-label">ID Guia</label>
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-addon">
+              <i class="fa fa-id-card"></i>
+            </div>
+          </div>
+          <select id="id_guia" name="id_guia">
+            {% for u in guia %}
+            <option value="{{ u.id_guia }}" {% if u.id_guia == guia.id_guia %}selected{% endif %}>
+              {{ u.id_guia }} - {{ u.nom_guia }}  {{ u.pape_guia }}  {{ u.sape_guia }}
+          </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <label for="dni" class="col-4 col-form-label">DNI</label> 
+    <div class="col-8">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fa fa-address-card"></i>
+          </div>
+        </div> 
+        <input id="dni" name="dni" type="text" required="required" class="form-control">
+      </div> 
+      <span id="dni" class="form-text text-muted">RUT</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="nom_guia" class="col-4 col-form-label">nom_guia</label> 
+    <div class="col-8">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fa fa-address-book"></i>
+          </div>
+        </div> 
+        <input id="nom_guia" name="nom_guia" type="text" required="required" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="pape_guia" class="col-4 col-form-label">pape_guia</label> 
+    <div class="col-8">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fa fa-area-chart"></i>
+          </div>
+        </div> 
+        <input id="pape_guia" name="pape_guia" type="text" class="form-control" required="required">
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="sape_guia" class="col-4 col-form-label">sape_guia</label> 
+    <div class="col-8">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fa fa-adn"></i>
+          </div>
+        </div> 
+        <input id="sape_guia" name="sape_guia" type="text" class="form-control" required="required">
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="contacto_guia" class="col-4 col-form-label">contacto_guia</label> 
+    <div class="col-8">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fa fa-phone"></i>
+          </div>
+        </div> 
+        <input id="contacto_guia" name="contacto_guia" type="text" class="form-control" required="required">
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="fnac_guia" class="col-4 col-form-label">fnac_guia</label> 
+    <div class="col-8">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fa fa-calendar-minus-o"></i>
+          </div>
+        </div> 
+        <input id="fnac_guia" name="fnac_guia" type="text" class="form-control" required="required">
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="email_guia" class="col-4 col-form-label">email_guia</label> 
+    <div class="col-8">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fa fa-commenting-o"></i>
+          </div>
+        </div> 
+        <input id="email_guia" name="email_guia" type="email" class="form-control" required="required">
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="id_pais" class="col-4 col-form-label">id_pais</label> 
+    <div class="col-8">
+      <select id="id_pais" name="id_pais" class="custom-select" required="required">
+        <option value="1">Chile</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-primary">actualizar Guia</button>
+    </div>
+  </div>
+</form>
+</div>
+{% endblock %}

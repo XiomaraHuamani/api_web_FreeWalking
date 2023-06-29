@@ -1,0 +1,36 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>ELIMINAR FACTURA</h2>
+  <form action="eliminarFactura" method="POST">
+    {% csrf_token %}
+
+    <div class="form-group row">
+      <label for="nombre" class="col-4 col-form-label">ID FACTURA</label>
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-addon">
+              <i class="fa fa-id-card"></i>
+            </div>
+          </div>
+         
+          <select id="id_factura" name="id_factura">
+            {% for u in factura %}
+            <option value="{{ u.id_factura }}" {% if u.id_factura == factura.id_factura %}selected{% endif %}>
+              {{ u.id_factura }} - {{ u.fecha }} 
+          </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="offset-4 col-8">
+        <button name="submit" type="submit" class="btn btn-danger"><class="fa fa-trash"> 
+          ELIMINAR FACTURA
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

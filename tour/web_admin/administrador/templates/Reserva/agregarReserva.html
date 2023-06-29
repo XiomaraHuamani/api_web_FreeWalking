@@ -1,0 +1,70 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Agregar Reserva</h2>
+  <form action="agregarReserva" method="POST">
+    {% csrf_token %}
+    <div class="form-group row">
+      <label for="cant_nino" class="col-4 col-form-label">cant_nino</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-user-circle"></i>
+            </div>
+          </div> 
+          <input id="cant_nino" name="cant_nino" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="cant_adulto" class="col-4 col-form-label">cant_adulto</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-chrome"></i>
+            </div>
+          </div> 
+          <input id="cant_adulto" name="cant_adulto" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="tot_cant" class="col-4 col-form-label">tot_cant</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-cc-amex"></i>
+            </div>
+          </div> 
+          <input id="tot_cant" name="tot_cant" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_pasaj" class="col-4 col-form-label">id_pasaj</label> 
+      <div class="col-8">
+        <select id="id_pasaj" name="id_pasaj" class="custom-select" required="required">
+          <option value="1">pasaje|1</option>
+          <option value="2">pasajero2</option>
+        </select>
+      </div>
+    </div> 
+    <div class="form-group row">
+      <label for="id_tour" class="col-4 col-form-label">id_tour</label> 
+      <div class="col-8">
+        <select id="id_tour" name="id_tour" class="custom-select" required="required">
+          <option value="1">Santiago</option>
+          <option value="2">Cordillera de los andes</option>
+        </select>
+      </div>
+    </div> 
+    <div class="form-group row">
+      <div class="offset-4 col-8">
+        <button name="submit" type="submit" class="btn btn-primary">AGREGAR CLIENTE</button>
+      </div>
+    </div>
+    </form>
+</div>
+{% endblock %}

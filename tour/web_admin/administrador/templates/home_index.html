@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      /*funciones de conexcion de paginas ... Se le agrega Gotohome de nombre generico.)*/
+      function goToHome() {
+        window.history.replaceState(
+          {},
+          document.title,
+          "/home_index"
+        ); /*esto es lo importante es la direccion de la pagina cual lleva esta funcion*/
+        window.location.reload();
+      }
+
+      function goToHome2() {
+        window.history.replaceState({}, document.title, "/reserva_tour");
+        window.location.reload();
+      }
+      function goToHome3() {
+        window.history.replaceState({}, document.title, "/contacto");
+        window.location.reload();
+      }
+      function goToHome4() {
+        window.history.replaceState({}, document.title, "/acerca_de");
+        window.location.reload();
+      }
+      function goToHome5() {
+        window.history.replaceState({}, document.title, "/tours");
+        window.location.reload();
+      }
+    </script>
+    {%load static%}
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut iccon" href="favicon.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'fonts//icomoon/style.css'%}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'fonts//flaticon/font/flaticon.css'%}"
+    />
+    <link rel="stylesheet" href="{% static 'css/daterangepicker.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/aos.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    
+
+    <title>FreeWalking Tour Chile</title>
+  </head>
+
+  <body>
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icofont-close js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <nav class="site-nav">
+      <div class="container">
+        <div class="site-navigation">
+          <a onclick="goToHome()" class="logo m-0"
+            >FreeWalking.com <span class="text-primary">.</span></a
+          >
+
+          <ul
+            class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right"
+          >
+            <li class="active"><a onclick="goToHome()">Home</a></li>
+            
+
+
+            <li><a onclick="goToHome5()">Tours</a></li>
+            <li><a onclick="goToHome4()">Acerca de nosotros</a></li>
+            <li><a onclick="goToHome3()">Contáctanos</a></li>
+            <li><a href="reserva_tour">[ Reserva un Tour ]</a></li>
+            <li><a href="registro_cliente">[ Registrate ]</a></li>
+          </ul>
+
+          <a
+            href="#"
+            class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
+            data-toggle="collapse"
+            data-target="#main-navbar"
+          >
+            <span></span>
+          </a>
+        </div>
+        sx2
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="intro-wrap">
+              <h1 class="mb-5">
+                <span class="d-block">Viaja con nosotros ...</span> Free Walking
+                Chile<p> </p> <span class="typed-words"></span>
+              </h1>
+
+              <div class="row">
+                <div class="col-12">
+                  <form class="form">
+                    <div class="row mb-2">
+                      <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                        <select
+                          name=""
+                          id=""
+                          class="form-control custom-select"
+                        >
+                          <option value="">Especialidades</option>
+                          <option value="1">Cerro San Cristóbal</option>
+                          <option value="2">Cerro Santa Lucía</option>
+                          <option value="3">Casco Histórico</option>
+                          <option value="4">La Moneda</option>
+                          <option value="5">Barrio Bellavista</option>
+                          <option value="6">Barrio Lastarria</option>
+                          <option value="7">Barrio Italia</option>
+                          <option value="8">Valparaíso</option>
+                          <option value="9">Viña del Mar</option>
+                          <option value="10">La Serena</option>
+                          <option value="11">Cordillera de Los Andes</option>
+                          <option value="12">Farellones</option>
+                          <option value="13">Cajón del Maipo</option>
+                          <option value="14">Siete Tazas</option>
+                          <option value="15">Iquique</option>
+                          <option value="16">Chiloé</option>
+                        </select>
+                      </div>
+
+                      <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
+                        <input type="date" class="form-control" id="fech_fac" name="trip-start"
+                        value="2023-06-24"
+                         min="2023-06-24" max="2024-12-31">
+                      </div>
+
+                    </div>
+
+                    <div class="row align-items-center">
+                      <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                        <a href="reserva_tour" class="btn btn-primary btn-block">Buscar</a>
+                      </div>
+
+                      <div class="row align-items-center">
+                        
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="slides">
+              <img
+                src="{% static 'images/moneda.jpg'%}"
+                alt="Image"
+                class="img-fluid active"
+              />
+              <img
+                src="{% static 'images/hero-slider-1.jpg'%}"
+                alt="Image"
+                class="img-fluid"
+              />
+              <img
+                src="{% static 'images/hero-slider-2.jpg'%}"
+                alt="Image"
+                class="img-fluid"
+              />
+              <img
+                src="{% static 'images/valparaiso.jpg'%}"
+                alt="Image"
+                class="img-fluid"
+              />
+              <img
+                src="{% static 'images/vinadelmar.jpg'%}"
+                alt="Image"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="untree_co-section">
+      <div class="container">
+        <div class="row text-center justify-content-center mb-5">
+          <div class="col-lg-7">
+            <h2 class="section-title text-center mb-5 text-primary" >Destinos Populares</h2>
+          </div>
+        </div>
+
+        <div class="owl-carousel owl-3-slider">
+          <div class="item">
+            <a
+              class="media-thumb"
+              href="{% static 'images/hero-slider-1.jpg'%}"
+              data-fancybox="gallery"
+            >
+              <div class="media-text">
+                <h3>Cerro San Cristobal</h3>
+                <span class="location">Santiago</span>
+                <p>$ 2000 CLP</p>
+              </div>
+              <img
+                src="{% static 'images/hero-slider-1.jpg'%}"
+                alt="Image"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+
+          <div class="item">
+            <a
+              class="media-thumb"
+              href="{% static 'images/hero-slider-2.jpg'%}"
+              data-fancybox="gallery"
+            >
+              <div class="media-text">
+                <h3>Cerro Santa lucia</h3>
+                <span class="location">Santiago</span>
+                <p>$ 2000 CLP</p>
+              </div>
+              <img
+                src="{% static 'images/hero-slider-2.jpg'%}"
+                alt="Image"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+
+
+          <div class="item">
+            <a
+              class="media-thumb"
+              href="{% static 'images/moneda.jpg'%}"
+              data-fancybox="gallery"
+            >
+              <div class="media-text">
+                <h3>La Moneda</h3>
+                <span class="location">Santiago</span>
+                <p>$ 5000 CLP</p>
+              </div>
+              <img
+                src="{% static 'images/moneda.jpg'%}"
+                alt="Image"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+
+          <div class="item">
+            <a
+              class="media-thumb"
+              href="{% static 'images/hero-slider-3.jpg'%}"
+              data-fancybox="gallery"
+            >
+              <div class="media-text">
+                <h3>Farellones</h3>
+                <span class="location">Lo Barnechea</span>
+                <p>$ 5000 CLP</p>
+              </div>
+              <img
+                src="{% static 'images/hero-slider-3.jpg'%}"
+                alt="Image"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+
+          <div class="item">
+            <a
+              class="media-thumb"
+              href="{% static 'images/valparaiso.jpg'%}"
+              data-fancybox="gallery"
+            >
+              <div class="media-text">
+                <h3>Valparaíso</h3>
+                <span class="location">V Región</span>
+                <p>$ 8000 CLP</p>
+              </div>
+              <img
+                src="{% static 'images/valparaiso.jpg'%}"
+                alt="Image"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+
+          <div class="item">
+            <a
+              class="media-thumb"
+              href="{% static 'images/vinadelmar.jpg'%}"
+              data-fancybox="gallery"
+            >
+              <div class="media-text">
+                <h3>Viña del Mar</h3>
+                <span class="location">V Región</span>
+                <p>$ 10000 CLP</p>
+              </div>
+              <img
+                src="{% static 'images/vinadelmar.jpg'%}"
+                alt="Image"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="untree_co-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-md-6 col-lg-3">
+            <div class="service text-center">
+              <span  class="icon-paper-plane text-primary"></span>
+              <h3 class="text-white">Ecxelencia en viajes</h3>
+              <p class="text-white">
+                Presencia los mejores tour de la region.
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-md-6 col-lg-3 text-primary">
+            <div class="service text-center">
+              <span class="icon-tag"></span>
+              <h3 class="text-white">Descubre lo mejor</h3>
+              <p class="text-white">
+                Los mejores paisajes y gastronomia de la region
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-md-6 col-lg-3 text-primary">
+            <div class="service text-center">
+              <span  class="icon-user"></span>
+              <h3 class="text-white">Momentos para toda la vida</h3>
+              <p class="text-white">
+                Vive momentos inolvidables, gracias a la rica cultura.
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-md-6 col-lg-3 text-primary">
+            <div class="service text-center">
+              <span class="icon-support"></span>
+              <h3 class="text-white">Alegria en tu viaje</h3>
+              <p class="text-white">
+                Con los mejores servicios de tour como bus de 2 pisos, caminatas
+                por los mejores lugares de la region.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {%include 'testimonios.html'%}
+
+    
+
+    <div class="untree_co-section">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-lg-6">
+            <figure class="img-play-video">
+              <a
+                id="play-video"
+                class="video-play-button"
+                href="https://www.youtube.com/watch?v=GPJMdkJeDw4"
+                data-fancybox
+              >
+                <span></span>
+              </a>
+              <img
+                src="{% static 'images/hero-slider-2.jpg'%}"
+                alt="Image"
+                class="img-fluid rounded-20"
+              />
+            </figure>
+          </div>
+
+          <div class="col-lg-5">
+            <h2 class="section-title text-left mb-4 text-primary">
+              Echa un vistazo a nuestros tours!
+            </h2>
+            <p class=text-white>
+              Chile es un destino turístico extraordinario por su diversidad natural
+              y paisajes impresionantes que van desde el desierto de Atacama hasta los
+              glaciares de la Patagonia. Además de su rica cultura y variadas actividades.
+            </p>
+
+            <p class="mb-4  text-white">
+              Chile ofrece una deliciosa gastronomía y una amplia infraestructura turística.
+              Todo esto le convierte en un destino único y atractivo para los viajeros que
+              desean explorar paisajes espectaculares, sumergirse en una cultura fascinante
+              y disfrutar de experiencias memorables.
+            </p>
+
+            <ul class="list-unstyled two-col clearfix text-white">
+              <li class="text-white">Actividades recreativas</li>
+              <li class="text-white">Tour por viñedos</li>
+              <li class="text-white">Tour por Valparaíso y Viña del Mar</li>
+              <li class="text-white">Tour por el Cajón del Maipo</li>
+              <li class="text-white">Tour por el resto del país</li>
+              <li class="text-white">Gastronomía chilena</li>
+              <li class="text-white">Tour por Cerro San Cristobal</li>
+              <li class="text-white">Tour por Cerro Santa Lucia</li>
+              <li class="text-white">Tour por Cordillera de los Andes</li>
+              <li class="text-white">Tour por Casco Historico</li>
+            </ul>
+
+            <p><a href="acerca_de" class="btn btn-primary">Conócenos</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {%include 'sabermas.html'%}
+
+    <footer>{%include 'footer.html'%}</footer>
+
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <script src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js'%}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js'%}"></script>
+    <script src="{% static 'js/aos.js'%}"></script>
+    <script src="{% static 'js/moment.min.js'%}"></script>
+    <script src="{% static 'js/daterangepicker.js'%}"></script>
+
+    <script src="{% static 'js/typed.js'%}"></script>
+    <script>
+      $(function () {
+        var slides = $(".slides"),
+          images = slides.find("img");
+
+        images.each(function (i) {
+          $(this).attr("data-id", i + 1);
+        });
+
+        var typed = new Typed(".typed-words", {
+          strings: [
+            "La Moneda.",
+            "Cerro San Cristóbal.",
+            "Casco Histórico.",
+            "Valparaíso.",
+            "Viña del Mar.",
+          ],
+          typeSpeed: 80,
+          backSpeed: 80,
+          backDelay: 4000,
+          startDelay: 1000,
+          loop: true,
+          showCursor: true,
+          preStringTyped: (arrayPos, self) => {
+            arrayPos++;
+            console.log(arrayPos);
+            $(".slides img").removeClass("active");
+            $('.slides img[data-id="' + arrayPos + '"]').addClass("active");
+          },
+        });
+      });
+    </script>
+
+    <script src="{% static 'js/custom.js'%}"></script>
+  </body>
+</html>

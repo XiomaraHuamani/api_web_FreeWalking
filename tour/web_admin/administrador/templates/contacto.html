@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<title>Ventana emergente en HTML</title>
+<script>
+  function mostrarMensaje() {
+    alert("★★★ Gracias por contactarte con nosotros, te responderemos a la brevedad! ★★★");
+  }
+</script>
+</head>
+
+  <header>{%include 'cabe.html'%}</header>
+
+  <body>
+    <div class="hero hero-inner">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mx-auto text-center">
+            <div class="intro-wrap">
+              <h1 class="mb-0">Contáctanos.</h1>
+              <p class="text-white">
+                ¿Tienes alguna sugerencia? ¿Te gustó nuestro trabajo? Cuéntanos!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="untree_co-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <form action="contacto" method="POST" data-aos="fade-up" data-aos-delay="200">
+              {% csrf_token %}
+              <div class="row">
+                  <div class="col-6">
+                      <div class="form-group">
+                          <label class="text-white" for="fname">Nombre</label>
+                          <input type="text" class="form-control" name="nom_contacto" placeholder="Tu nombre" />
+                      </div>
+                  </div>
+                  <div class="col-6">
+                      <div class="form-group">
+                          <label class="text-white" for="lname">Apellido</label>
+                          <input type="text" class="form-control" name="ape_contacto" placeholder="Tu apellido" />
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="text-white" for="email">Correo electrónico</label>
+                  <input type="email" class="form-control" name="email_contacto" placeholder="aaaaa@aaaa.com"/>
+              </div>
+              <div class="form-group">
+                  <label class="text-white" for="phone">Celular | Whatsapp</label>
+                  <div class="input-group">
+                      <select class="form-control" name="countryCode" style="width: 90px;">
+                          <option value="1">+56</option>
+                          <option value="44">+44</option>
+                          <option value="49">+49</option>
+                          <!-- Agrega más opciones de códigos de país según tus necesidades -->
+                      </select>
+                      <input type="text" class="form-control" name="fono_contacto" style="width: calc(100% - 90px);" />
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="text-white" for="message">Mensaje</label>
+                  <textarea name="mensaje" class="form-control" cols="30" rows="5"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary text-black" onclick="mostrarMensaje()">Enviar mensaje</button>
+          </form>
+          
+          </div>
+          
+          <div class="col-lg-5 ml-auto">
+            <div class="quick-contact-item d-flex align-items-center mb-4">
+              <span class="flaticon-house text-primary"></span>
+              <address class="text text-primary">
+                123 Freire, San Bernardo, Chile
+              </address>
+            </div>
+            <div class="quick-contact-item d-flex align-items-center mb-4">
+              <span class="flaticon-phone-call text-primary"></span>
+              <address class="text text-primary">+56 9 88776644</address>
+            </div>
+            <div class="quick-contact-item d-flex align-items-center mb-4">
+              <span class="flaticon-mail text-primary"></span>
+              <address class="text text-primary">mail@freewalking.com</address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {%include 'testimonios.html'%}
+
+    <footer>{%include 'footer.html'%}</footer>
+
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Cargando...</span>
+      </div>
+    </div>
+
+    <script src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js'%}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js'%}"></script>
+    <script src="{% static 'js/aos.js'%}"></script>
+    <script src="{% static 'js/moment.min.js'%}"></script>
+    <script src="{% static 'js/daterangepicker.js'%}"></script>
+
+    <script src="{% static 'js/typed.js'%}"></script>
+
+    <script src="{% static 'js/custom.js'%}"></script>
+  </body>
+</html>

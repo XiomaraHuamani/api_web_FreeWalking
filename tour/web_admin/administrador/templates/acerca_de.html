@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+  <header>{%include 'cabe.html'%}</header>
+  <body>
+    <div class="hero hero-inner">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mx-auto text-center">
+            <div class="intro-wrap">
+              <h1 class="mb-0">¿Quienes somos?</h1>
+              <p class="text-white">Somos un equipo apasionado de guías turísticos comprometidos en brindar
+                experiencias memorables y enriquecedoras a los visitantes de nuestra ciudad. <p> </p>
+             
+
+                <p class="text-white">Nuestro equipo está conformado por guías locales con un profundo conocimiento y
+                  amor por la ciudad. Nos enorgullece compartir nuestra pasión por la historia,
+                  la cultura y las maravillas de nuestro destino con todos aquellos que nos visitan.</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="untree_co-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="owl-single dots-absolute owl-carousel">
+              <img
+                src="{% static 'images/free-2.jpg'%}"
+                alt="Free HTML Template by Untree.co"
+                class="img-fluid rounded-20"
+              />
+              <img
+                src="{% static 'images/free-3.jpg'%}"
+                alt="Free HTML Template by Untree.co"
+                class="img-fluid rounded-20"
+              />
+              <img
+                src="{% static 'images/free-4.jpg'%}"
+                alt="Free HTML Template by Untree.co"
+                class="img-fluid rounded-20"
+              />
+            </div>
+          </div>
+          <div class="col-lg-5 pl-lg-5 ml-auto">
+            <h2 class="section-title mb-4 text-primary">Nuestra visión</h2>
+            <p class="text-white">
+              Creemos firmemente en que explorar una ciudad a pie es la mejor manera de
+                sumergirse en su autenticidad y descubrir sus secretos ocultos. Por eso, diseñamos
+                y ofrecemos tours a pie gratuitos que abarcan los principales puntos de interés,
+                así como rincones menos conocidos pero igualmente fascinantes.</p>
+
+                <p class="text-white">Nuestro objetivo es proporcionar a nuestros participantes una experiencia única y
+                enriquecedora. Nos esforzamos por ofrecer narraciones interesantes, datos curiosos
+                y anécdotas locales que dan vida a la ciudad y la hacen memorable.
+                Además, nos aseguramos de mantener un ambiente relajado y amigable para que todos
+                se sientan cómodos y disfruten al máximo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="untree_co-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-6 text-center">
+            <h2 class="section-title mb-3 text-center text-primary">Nuestro Equipo</h2>
+            <p class="text-white">
+              Juntos, nuestro equipo trabaja en armonía para brindar las mejores experiencias
+              a los visitantes, garantizando que cada tour sea memorable, enriquecedor y lleno de diversión.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 mb-4">
+            <div class="team">
+              <img
+                src="{% static 'images/person_1.jpg'%}"
+                alt="Image"
+                class="img-fluid mb-4 rounded-20"
+              />
+              <div class="px-3">
+                <h3 class="mb-0 text-primary" >Octavio Romero</h3>
+                <p class="text-white">Fundador &amp; CEO</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 mb-4">
+            <div class="team">
+              <img
+                src="{% static 'images/person_2.jpg'%}"
+                alt="Image"
+                class="img-fluid mb-4 rounded-20"
+              />
+              <div class="px-3">
+                <h3 class="mb-0 text-primary">Luciana Cordero</h3>
+                <p class="text-white">Co-Fundadora &amp; CEO</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 mb-4">
+            <div class="team">
+              <img
+                src="{% static 'images/person_4.jpg'%}"
+                alt="Image"
+                class="img-fluid mb-4 rounded-20"
+              />
+              <div class="px-3">
+                <h3 class="mb-0 text-primary">Valentina Arriagada</h3>
+                <p class="text-white">Co-Fundadora &amp; CEO</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 mb-4">
+            <div class="team">
+              <img
+                src="{% static 'images/person_3.jpg'%}"
+                alt="Image"
+                class="img-fluid mb-4 rounded-20"
+              />
+              <div class="px-3">
+                <h3 class="mb-0 text-primary">Héctor Pavéz</h3>
+                <p class="text-white">Director de Operaciones</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    {%include 'sabermas.html'%}
+
+    <footer>{%include 'footer.html'%}</footer>
+
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <script src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js'%}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js'%}"></script>
+    <script src="{% static 'js/aos.js'%}"></script>
+    <script src="{% static 'js/moment.min.js'%}"></script>
+    <script src="{% static 'js/daterangepicker.js'%}"></script>
+
+    <script src="{% static 'js/typed.js'%}"></script>
+
+    <script src="{% static 'js/custom.js'%}"></script>
+  </body>
+</html>

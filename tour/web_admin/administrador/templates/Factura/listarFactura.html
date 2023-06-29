@@ -1,0 +1,27 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Listar Facturas</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id_factura</th>
+        <th scope="col">fecha</th>
+        <th scope="col">porc_factura</th>
+        <th scope="col">porc_iva</th>
+        <th scope="col">monto_iva</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for u in factura%}
+      <tr>
+        <th scope="row">{{ u.id_factura }}</th>
+        <td>{{ u.fecha }}</td>
+        <td>{{ u.porc_factura }}</td>
+        <td>{{ u.porc_iva }}</td>
+        <td>{{ u.monto_iva }}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

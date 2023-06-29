@@ -1,0 +1,37 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Listar Clientes</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id_cliente</th>
+        <th scope="col">dni</th>
+        <th scope="col">username</th>
+        <th scope="col">ape_pat</th>
+        <th scope="col">ape_mat</th>
+        <th scope="col">genero</th>
+        <th scope="col">contacto</th>
+        <th scope="col">direccion</th>
+        <th scope="col">email</th>
+        <th scope="col">id_ciudad</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for u in cliente%}
+      <tr>
+        <th scope="row">{{ u.id_cliente }}</th>
+        <td>{{ u.dni }}</td>
+        <td>{{ u.username }}</td>
+        <td>{{ u.ape_pat }}</td>
+        <td>{{ u.ape_mat }}</td>
+        <td>{{ u.genero }}</td>
+        <td>{{ u.contacto }}</td>
+        <td>{{ u.direccion }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.id_ciudad }}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+trabajar con carpeta static a la hora de implementar otro codigo.
+     "EJEMPLOS"
+
+{% load static %} colocar despues de doctype
+
+ejemplo de que remplazar inicio : "css/....
+                                  "js/....
+                                  "png/....
+
+
+ejemplo de que remplazar final:   .css"
+                                  .js" 
+                                   etc.
+quedaria asi :
+1.-"{% static 'css/   ----->> para colocar al inicio de cada css o imagen o js, etc. indica ruta
+2.-.css'%}"           .....>> para colocar al final de cada css o imagen o js,etc. indica la ruta 

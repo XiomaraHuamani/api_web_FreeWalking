@@ -1,0 +1,29 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Listar Reservas</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id_reserva</th>
+        <th scope="col">cant_niño</th>
+        <th scope="col">cant_adulto</th>
+        <th scope="col">tot_cant</th>
+        <th scope="col">id_pasaj</th>
+        <th scope="col">id_tour</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for u in reserva%}
+      <tr>
+        <th scope="row">{{ u.id_reserva }}</th>
+        <td>{{ u.cant_niño }}</td>
+        <td>{{ u.cant_adulto }}</td>
+        <td>{{ u.tot_cant }}</td>
+        <td>{{ u.id_pasaj }}</td>
+        <td>{{ u.id_tour }}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

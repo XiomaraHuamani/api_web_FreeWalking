@@ -1,0 +1,87 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Actualizar Reserva</h2>
+
+  <form action="actualizarTour" method="POST">
+    {% csrf_token %}
+
+    <div class="form-group row">
+      <label for="nombre" class="col-4 col-form-label">ID Tour</label>
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-addon">
+              <i class="fa fa-id-card"></i>
+            </div>
+          </div>
+          <select id="id_tour" name="id_tour">
+            {% for u in tour %}
+            <option value="{{ u.id_tour }}" {% if u.id_tour == tour.id_tour %}selected{% endif %}>
+              {{ u.id_tour }} - {{ u.nom_tour }} ${{ u.valor_tour }}
+          </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="nom_tour" class="col-4 col-form-label">Nombre del Tour</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-user-circle"></i>
+            </div>
+          </div> 
+          <input id="nom_tour" name="nom_tour" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="fecha_tour" class="col-4 col-form-label">Fecha de tour</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-chrome"></i>
+            </div>
+          </div> 
+          <input id="fecha_tour" name="fecha_tour" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="desc_tour" class="col-4 col-form-label">Descripcion tour</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-cc-amex"></i>
+            </div>
+          </div> 
+          <input id="desc_tour" name="desc_tour" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="valor_tour" class="col-4 col-form-label">Valor Tour</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-cc-amex"></i>
+            </div>
+          </div> 
+          <input id="valor_tour" name="valor_tour" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="offset-4 col-8">
+        <button name="submit" type="submit" class="btn btn-primary">ACTUALIZAR CLIENTE</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

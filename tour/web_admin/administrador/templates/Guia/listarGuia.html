@@ -1,0 +1,36 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Listar Guias</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id guia</th>
+        <th scope="col">dni</th>
+        <th scope="col">nombre guia</th>
+        <th scope="col">pape_guia</th>
+        <th scope="col">sape_guia</th>
+        <th scope="col">contacto_guia</th>
+        <th scope="col">fnac_guia</th>
+        <th scope="col">email_guia</th>
+        <th scope="col">id_pais</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for u in guia%}
+      <tr>
+        <th scope="row">{{ u.id_guia }}</th>
+        <td>{{ u.dni }}</td>
+        <td>{{ u.nom_guia }}</td>
+        <td>{{ u.pape_guia }}</td>
+        <td>{{ u.sape_guia }}</td>
+        <td>{{ u.contacto_guia}}</td>
+        <td>{{ u.fnac_guia }}</td>
+        <td>{{ u.email_guia }}</td>
+        <td>{{ u.id_pais}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

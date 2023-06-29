@@ -1,0 +1,35 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>ELIMINAR CLIENTE</h2>
+  <form action="eliminarCliente" method="POST">
+    {% csrf_token %}
+
+    <div class="form-group row">
+      <label for="nombre" class="col-4 col-form-label">ID CLIENTE</label>
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-addon">
+              <i class="fa fa-id-card"></i>
+            </div>
+          </div>
+          <select id="id_cliente" name="id_cliente">
+            {% for u in cliente %}
+            <option value="{{ u.id_cliente }}" {% if u.id_cliente == cliente.id_cliente %}selected{% endif %}>
+              {{ u.id_cliente }} - {{ u.username }} {{ u.ape_pat }}
+          </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="offset-4 col-8">
+        <button name="submit" type="submit" class="btn btn-danger"><class="fa fa-trash"> 
+          ELIMINAR CLIENTE
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

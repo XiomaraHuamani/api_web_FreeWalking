@@ -1,0 +1,138 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Agregar Cliente</h2>
+  <form action="agregarCliente" method="POST">
+    {% csrf_token %}
+    <div class="form-group row">
+      <label for="dni" class="col-4 col-form-label">dni</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-blind"></i>
+            </div>
+          </div> 
+          <input id="dni" name="dni" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="username" class="col-4 col-form-label">Nombre</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-user-circle"></i>
+            </div>
+          </div> 
+          <input id="username" name="username" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="text" class="col-4 col-form-label">Apellido Paterno</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-chrome"></i>
+            </div>
+          </div> 
+          <input id="ape_pat" name="ape_pat" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="ape_mat" class="col-4 col-form-label">Apellido Materno</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-cc-amex"></i>
+            </div>
+          </div> 
+          <input id="ape_mat" name="ape_mat" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="genero" class="col-4 col-form-label">Genero</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-street-view"></i>
+            </div>
+          </div> 
+          <input id="genero" name="genero" type="genero" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="contacto" class="col-4 col-form-label">Contacto</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-street-view"></i>
+            </div>
+          </div> 
+          <input id="contacto" name="contacto" type="text" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="direccion" class="col-4 col-form-label">Direccion</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-street-view"></i>
+            </div>
+          </div> 
+          <input id="direccion" name="direccion" type="direccion" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="email" class="col-4 col-form-label">email</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-circle"></i>
+            </div>
+          </div> 
+          <input id="email" name="email" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_ciudad" class="col-4 col-form-label">id_ciudad</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-home"></i>
+            </div>
+          </div> 
+          <select id="id_ciudad" name="id_ciudad" class="form-control">
+            <option value="">Seleccionar ciudad</option>
+            <!-- Aquí puedes generar dinámicamente las opciones con los valores de la tabla "Ciudad" -->
+            <option value="1">Santiago</option>
+            <option value="2">Valparaiso</option>
+            <option value="3">Viña Del Mar</option>
+            <!-- ... -->
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <div class="offset-4 col-8">
+        <button name="submit" type="submit" class="btn btn-primary">AGREGAR CLIENTE</button>
+      </div>
+    </div>
+    </form>
+</div>
+{% endblock %}

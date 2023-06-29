@@ -1,0 +1,27 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Listar Tour</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id_tour</th>
+        <th scope="col">nom_tour</th>
+        <th scope="col">fecha_tour</th>
+        <th scope="col">desc_tour</th>
+        <th scope="col">valor_tour</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for u in tour%}
+      <tr>
+        <th scope="row">{{ u.id_tour }}</th>
+        <td>{{ u.nom_tour }}</td>
+        <td>{{ u.fecha_tour }}</td>
+        <td>{{ u.desc_tour }}</td>
+        <td>{{ u.valor_tour }}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

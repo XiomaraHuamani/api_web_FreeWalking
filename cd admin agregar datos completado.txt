@@ -1,0 +1,61 @@
+cd admin
+cd tour
+scripts\activate
+cd web_admin
+borra_base.bat (-solo si se agrega models nuevo-)
+python manage.py shell
+ESTADO-----------------------------------------------------------------------
+from administrador.models import Estado
+estado=Estado(id_estado=1,des_estado="habilitado")
+estado.save()
+estado=Estado(id_estado=2,des_estado="no habilitado")
+estado.save()
+estado=Estado(id_estado=3,des_estado="reservado")
+estado.save()
+estado=Estado(id_estado=4,des_estado="cancelado")
+estado.save()
+estado = Estado.objects.all()
+for Estado in estado:
+...     print(Estado.id_estado,Estado.des_estado)
+IDIOMA------------------------------------------------------------------------
+from administrador.models import Idioma
+idioma=Idioma(id_idioma=1,des_idioma="español")
+idioma.save()
+idioma=Idioma(id_idioma=2,des_idioma="ingles")
+idioma.save()
+idioma = Idioma.objects.all()
+for Idioma in idioma:
+...     print(Idioma.id_idioma,Idioma.des_idioma)
+PAIS--------------------------------------------------------------------------
+from administrador.models import Pais
+pais=Pais(id_pais=1,nom_pais="chile")
+pais.save()
+pais = Pais.objects.all()
+for Pais in pais:
+...     print(Pais.id_pais,Pais.nom_pais)
+CIUDAD-------------------------------------------------------------------------
+from administrador.models import Pais
+pais=Pais(id_pais=1,nom_pais="chile")
+ciudad = Ciudad(id_ciudad=1, nom_ciu ="Santiago", id_pais=pais)
+ciudad.save()
+ciudad = Ciudad(id_ciudad=2, nom_ciu ="Valparaiso", id_pais=pais)
+ciudad.save()
+ciudad = Ciudad(id_ciudad=3, nom_ciu ="Viña del mar", id_pais=pais)
+ciudad.save()
+ciudad = Ciudad.objects.all()
+for Ciudad in ciudad:
+...      print(Ciudad.id_ciudad,Ciudad.nom_ciu)
+HORARIO-------------------------------------------------------------------------
+from administrador.models import Horario
+from administrador.models import Estado
+estado=Estado(id_estado=1,des_estado="habilitado")
+estado=Estado(id_estado=2,des_estado="no habilitado")
+estado=Estado(id_estado=3,des_estado="reservado")
+estado=Estado(id_estado=4,des_estado="cancelado")
+horario=Horario(id_horario=1,hora="mañana",duracion=2,modo="diurno",id_estado=estado)
+horario.save()
+horario=Horario(id_horario=2,hora="tarde",duracion=2,modo="vespertino",id_estado=estado)
+horario.save()
+horario = Horario.objects.all()
+for Horario in horario:
+...      print(Horario.id_horario,Horario.hora,Horario.duracion,Horario.modo)

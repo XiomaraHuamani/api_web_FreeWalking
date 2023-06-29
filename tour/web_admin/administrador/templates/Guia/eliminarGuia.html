@@ -1,0 +1,35 @@
+{% extends '../index_master.html'%} {% block content %}
+<div class="right_col" role="main">
+  <h2>Eliminar Guia</h2>
+  <form action="eliminarGuia" method="POST">
+    {% csrf_token %}
+
+    <div class="form-group row">
+      <label for="nombre" class="col-4 col-form-label">ID Guia</label>
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-addon">
+              <i class="fa fa-id-card"></i>
+            </div>
+          </div>
+          <select id="id_guia" name="id_guia">
+            {% for u in guia %}
+            <option value="{{ u.id_guia }}" {% if u.id_guia == guia.id_guia %}selected{% endif %}>
+              {{ u.id_guia }} - {{ u.nom_guia }}  {{ u.pape_guia }}  {{ u.sape_guia }}
+          </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="offset-4 col-8">
+        <button name="submit" type="submit" class="btn btn-danger"><class="fa fa-trash"> 
+          ELIMINAR GUIA
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

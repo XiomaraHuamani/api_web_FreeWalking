@@ -1,0 +1,18 @@
+pip list
+C:\> mkdir RM -- crear carpeta en raiz de C o D 
+pip install virtualenv
+virtualenv veterinaria
+C:\cd veterinaria
+Scripts\activate
+pip install Django
+django-admin startproject back_end
+django-admin startproject front_end
+cd back_end --o  cd font_end
+-- rem python manage.py runserver local
+python manage.py runserver 0.0.0.0:9000 --rem red
+python manage.py startapp ventas 
+python manage.py startapp conta
+python manage.py startapp remu
+
+**************************************
+
